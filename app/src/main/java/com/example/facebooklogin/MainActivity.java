@@ -1,6 +1,7 @@
 package com.example.facebooklogin;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
     private CircleImageView circleImageView;
     private TextView        textName,
-                            textEmail;
+                            textEmail,
+                            textId;
 
     private CallbackManager callbackManager;
 
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         LoginButton loginButton = findViewById(R.id.login_button);
+        textId                  = findViewById(R.id.profile_id);
         textName                = findViewById(R.id.profile_name);
         textEmail               = findViewById(R.id.profile_email);
         circleImageView         = findViewById(R.id.profile_pic);
@@ -86,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 textEmail.setText("");
                 textName.setText("");
+                textId.setText("");
                 circleImageView.setImageResource(R.drawable.fb_logo);
 
                 Toast.makeText(MainActivity.this, "User logged out", Toast.LENGTH_LONG).show();
@@ -111,6 +115,8 @@ public class MainActivity extends AppCompatActivity {
 
                     textEmail.setText(email);
                     textName.setText(first_name + " " + last_name);
+                    textId.setText("Profile ID: " + id);
+
                     RequestOptions requestOptions = new RequestOptions();
                     requestOptions.dontAnimate();
 

@@ -6,29 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:gravity="center">
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="95dp"
-        android:layout_height="95dp"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/profile_pic" />
+    android:gravity="fill_vertical">
 
     <TextView
         android:id="@+id/profile_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
+        android:layout_marginTop="15dp"
         android:gravity="center"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp" />
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/profile_email"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="25dp" />
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_pic"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/profile_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center" />
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
